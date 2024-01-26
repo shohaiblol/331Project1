@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Handjet:wght@500&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Dosis:wght@600&family=Handjet&wght@500&family=Lilita+One&display=swap');
+
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body { /* styling for the overall page and the font used for it */
+  text-align: center;
+  color: #fff;
+  font-family: 'Lilita One', sans-serif;
+  opacity: 0;
+  transition: opacity .5s ease; 
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+}
+body.fade-in {
+  opacity: 1;
+}
+
+.background-text { /* For the main page text */
+  display: inline-block;
+  font-family: 'Lilita One', sans-serif;
+  color: #1c1c1c;
+  font-size: 45px;
+  margin-bottom: 450px;
+  line-height: 1;
+  padding: 0; 
+  cursor: pointer;
+  transition: font-size 0.3s ease, text-shadow 0.3s ease;
+}
+
+.background-text:hover { /* little effect when hover over the click me*/
+  font-size: 50px;
+  text-shadow: 4px 4px 5px #b1b0b0;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.background-text-fade-in, .about-text-fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.background-text-fade-out, .about-text-fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+.about-text { /* The text that is shown once the click me is clicked*/
+  display: none;
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 350px;
+  cursor: pointer;
+  transition: font-size 0.3s ease, text-shadow 0.3s ease;
+  white-space: pre-wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: auto;
+}
+
+.about-text-typing { /* made a cool effect that types out the message instead of just showing it */
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid;
+  animation: blink 0.75s step-end infinite;
+  width: 100%;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: #fff; }
+}
+
+.about-text:hover { /* little effect when hovered over the text */
+  text-shadow: 4px 4px 5px #b1b0b0;
+}
+
+.about-text-content {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.about-image { /* for the image of me, still need to add a effect that allows it to enlarge when hovered over the image */
+  display: none;
+  position: absolute;
+  bottom: 15%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: auto;
+  height: 30%; 
+  max-width: 90%;
+  z-index: 5; 
+  transition: all 0.5s ease; 
+
+}
+
+.about-image-fade-in {
+  animation: fadeIn 2s forwards;
+  display: block;
+}
+
+.about-image-fade-out {
+  animation: fadeOut 1s forwards;
+  display: block;
+}
+
+
+
+.resume-link { /* small link in bottom right of my resume */
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  z-index: 1000;
+  font-size: 16px;
+}
+
+.resume-link a {
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Dosis', sans-serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-link a:hover { /* hover effect for the resume */
+  background-color: #fff;
+  color: rgb(99, 140, 220);
+}
+

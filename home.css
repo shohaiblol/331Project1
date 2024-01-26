@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap'); /*Caveat for "Mohammad Shohaib" */
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&display=swap'); /*Belanosima for header icons*/
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Handjet:wght@500&display=swap'); /*Handjet for the info thing*/
+
+/* GENERAL DIMENSTIONS FOR PAGE */
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* MAIN PART OF THE PAGE */
+body h1 {
+    font-family: 'Caveat', cursive;
+    font-size: 96px; 
+    color: #333;
+
+    /*used to make underline effect */
+    position: relative; 
+    display: inline-block;
+    
+    /*space between h1 and header and bio */
+    margin-top: 80px; 
+    margin-bottom: 80px;
+    cursor: default;
+    transition: color 1.4s ease;
+}
+body h1::after {
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 4px;
+    background-color: #333;
+    left: 50%;
+    bottom: -10px;
+    transition: all 0.4s ease-in-out;
+}
+
+body h1:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+body {
+    opacity: 1;
+    transition: opacity .5s ease;
+  }
+  
+  body.fade-out {
+    opacity: 0;
+  }
+  
+
+
+/* MAIN PART OF THE PAGE */
+
+/*HEADER STUFF */
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+header {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: white;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #9c9fa1, #f0f0f0);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    padding: 20px 150px 20px 20px;  
+}
+
+header:hover {
+    transform: scale(1.10);
+    padding: 20px 150px 20px 20px; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+    
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    margin: 0;
+}
+
+nav ul li a, nav ul li a .icon {
+    
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px; 
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+nav ul li a:hover, nav ul li a:hover .icon {
+    animation: bounce 0.5s infinite;
+    color: #ffffff;
+    transform: scale(5.1); 
+    color: #ffffff; 
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+  }
+
+/*HEADER STUFF */
+
+/* FOOTER STUFF */
+footer {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: rgb(0, 0, 0);
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #9c9fa1, #f0f0f0);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+    padding: 20px 150px 20px 20px;  
+}
+
+footer:hover {
+    transform: scale(1.10); 
+    padding: 20px 150px 20px 20px;  
+}
+
+footer p {
+    margin-left: 50px; 
+}
+
+/* FOOTER STUFF */
+
+/*INFO ICON STUFF */ 
+.hover-box {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+.icon-box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0);
+    transition: transform 1s;
+}
+
+.icon-box:hover {
+    transform: rotateX(-180deg);
+}
+
+.icon-box .front,
+.icon-box .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front {
+    line-height: 100px;
+    color: #000000;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 100%;
+    background-color: white;
+    
+}
+
+.back {
+    transform: rotateY(180deg) rotate(180deg); 
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: transparent;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px; 
+    font-family: 'Handjet', sans-serif;
+}
+
+back-text {
+    display: block;
+    position: relative;
+    top: 20px;  
+    font-size: 30px;
+    color: #1e90ff;
+}
+/*INFO ICON STUFF */ 
+
+/*WHEN PAGE RELOADS*/
+#loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #f0f0f0;
+    opacity: 1;
+    transition: opacity .5s ease; 
+  }
+  
+  
+  @-webkit-keyframes sk-scaleout {
+    0% { -webkit-transform: scale(0) }
+    100% {
+      -webkit-transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sk-scaleout {
+    0% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+  }
+  
+
+
+
+
+  /* 
