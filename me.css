@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Handjet:wght@500&family=Lilita+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Dosis:wght@600&family=Handjet&wght@500&family=Lilita+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Akatab:wght@600&family=Belanosima&family=Caveat:wght@500;700&family=Dosis:wght@600&family=Gaegu&family=Gloria+Hallelujah&family=Handjet:wght@300;400;500&family=Kalam:wght@700&family=Lexend&family=Lilita+One&family=Mooli&family=Signika+Negative:wght@500&family=Single+Day&display=swap');
 header {
   position: relative;
   z-index: 1000;
@@ -10,12 +9,13 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #1e1e1e
 }
 
 body { /* styling for the overall page and the font used for it */
   text-align: center;
-  color: #fff;
-  font-family: 'Lilita One', sans-serif;
+  color: white;
+  font-family: 'Single Day', sans-serif;
   opacity: 0;
   transition: opacity .5s ease; 
   width: 100%;
@@ -29,8 +29,8 @@ body.fade-in {
 
 .background-text { /* For the main page text */
   display: inline-block;
-  font-family: 'Lilita One', sans-serif;
-  color: #1c1c1c;
+  font-family: 'Single Day', sans-serif;
+  color: white;
   font-size: 45px;
   margin-bottom: 450px;
   line-height: 1;
@@ -65,15 +65,19 @@ body.fade-in {
   display: none;
   font-family: 'Dosis', sans-serif;
   font-size: 20px;
-  color: black;
+  color: white;
   margin-bottom: 350px;
   cursor: pointer;
   transition: font-size 0.3s ease, text-shadow 0.3s ease;
   white-space: pre-wrap;
-  width: 80%;
-  margin-left: auto;
+  width: 40%;
+  margin-left: 0;
   margin-right: auto;
   overflow: auto;
+  position: absolute;
+  left: 120px;
+  top: 50%; 
+  transform: translateY(-50%);
 }
 
 .about-text-typing { /* made a cool effect that types out the message instead of just showing it */
@@ -99,25 +103,18 @@ body.fade-in {
   white-space: pre-wrap;
 }
 
-.about-image { /* for the image of me, still need to add a effect that allows it to enlarge when hovered over the image */
+.about-image { 
   display: none;
   position: absolute;
-  bottom: 15%; 
-  left: 50%;
-  transform: translateX(-50%); 
+  top: 50%; 
+  right: 150px; 
+  transform: translateY(-50%);
   width: auto;
-  height: 30%; 
+  height: 40%; 
   max-width: 90%;
   z-index: 5; 
   transition: all 0.5s ease; 
 
-}
-
-.about-image:hover {
-  transform: translateX(-50%) scale(1.7); 
-  bottom: 35%;
-  z-index: 999; 
-  transition: all 0.5s ease; 
 }
 
 .about-image-fade-in {
@@ -130,18 +127,16 @@ body.fade-in {
   display: block;
 }
 
-
-
 .resume-link { /* small link in bottom right of my resume */
   position: fixed;
-  right: 20px;
+  left: 20px;
   bottom: 90px;
   z-index: 1000;
   font-size: 16px;
 }
 
 .resume-link a {
-  color: #000000;
+  color: white;
   text-decoration: none;
   font-family: 'Dosis', sans-serif;
   padding: 5px 10px;
@@ -150,10 +145,10 @@ body.fade-in {
 }
 
 .resume-link a:hover { /* hover effect for the resume */
-  background-color: #fff;
+  background-color: #5e5e5e;
   color: rgb(99, 140, 220);
 }
-/*toggle button stuff*/
+
 .container {
   position: absolute;
   top: 100px; 
@@ -162,6 +157,7 @@ body.fade-in {
   height: auto;
   z-index: 1000; 
 }
+
 
 .container img {
   width: 100px; 
@@ -173,7 +169,7 @@ body.fade-in {
   animation: shake 0.5s ease infinite; 
 }
 
-/*effect for image of me*/
+
 @keyframes shake {
   0%, 100% {
     transform: scale(1.2) rotate(0);
@@ -186,8 +182,85 @@ body.fade-in {
   }
 }
 
+/* Header stuff */
+header {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: white;
+    position: relative;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    padding: 20px 150px 20px 20px;  
+    margin-top: 0;
+}
 
+header:hover {
+    transform: scale(1.10);
+    padding: 20px 150px 20px 20px; 
+}
 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+}
 
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    margin: 0;
+}
 
+nav ul li a, nav ul li a .icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px; 
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+nav ul li a:hover, nav ul li a:hover .icon {
+    animation: bounce 0.5s infinite;
+    color: #9c9fa1; 
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+}
+
+/* Footer stuff */
+footer {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: #f0f0f0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+    padding: 20px 150px 20px 20px;  
+}
+
+footer:hover {
+    transform: scale(1.10); 
+    padding: 20px 150px 20px 20px;  
+}
+
+footer p {
+    margin-left: 50px; 
+}
 

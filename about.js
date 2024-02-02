@@ -1,4 +1,4 @@
-// Getting elements by their ids and classes
+//getting elements by their ids and classes
 var backgroundText = document.getElementById('background-text');
 var aboutText = document.getElementById('about-text');
 var aboutImage = document.querySelector('.about-image');
@@ -61,3 +61,39 @@ window.addEventListener('load', function() { //load animation
   }, 800);
 });
 
+/*loader function*/
+var num = 0; 
+function button1() {
+    num++;
+    document.getElementById("output").innerHTML = "Press x " + num;
+}
+function toggleStyleSheet(){
+    var styleSheet = document.getElementById("mainStyleSheet"); 
+    var current = styleSheet.getAttribute("href");
+    var newStyle;
+
+    if (current.includes("about")){
+        newStyle = "me.css";
+    } 
+    else{
+        newStyle = "about.css";
+    }
+    styleSheet.setAttribute("href", newStyle);
+    localStorage.setItem("current", newStyle);
+
+}
+window.onload = function() {
+    var savedStyle = localStorage.getItem("current");
+    var styleSheet = document.getElementById("mainStyleSheet");
+
+    // Check if the saved style is applicable for the current page
+    if (savedStyle && (savedStyle === "about.css" || savedStyle === "me.css")) {
+        styleSheet.setAttribute("href", savedStyle);
+    } else {
+        // Default to 'about.css' if no suitable saved style is found for this page
+        styleSheet.setAttribute("href", "about.css");
+        localStorage.setItem("current", "about.css");
+    }
+
+    document.getElementById('toggleStyle').addEventListener('click', toggleStyleSheet);
+};

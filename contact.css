@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Caveat:wght@700&family=Dosis:wght@600&family=Handjet:wght@300;400;500&family=Kalam:wght@700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Akatab:wght@600&family=Belanosima&family=Caveat:wght@700&family=Dosis:wght@600&family=Handjet:wght@300;400;500&family=Kalam:wght@700&family=Lilita+One&display=swap');
 
 header {
@@ -16,6 +16,11 @@ header {
   opacity: 1;
   transition: opacity .5s ease;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e1e
+  }
 
 body { /*page things */
   opacity: 1;
@@ -38,19 +43,25 @@ body.fade-out {
   }
 }
 
-.direct-contact-container {
-  position: fixed; 
-  right: 80px; 
-  top: 200px;
-  max-width: 500px;
-  padding: 80px 150px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  opacity: 1; 
-  animation: fadeIn 4s forwards, colorChange 5s ease infinite 2s alternate;
 
+.direct-contact-container { /*contact box*/
+  position: fixed; 
+  right: 80px;
+  top: 200px;
+  width: 500px; 
+  height: 500px; 
+  padding: 40px; 
+  background-color: #f9f9f9;
+  border-radius: 50%; 
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+  animation: fadeIn 4s forwards, colorChange 5s ease infinite 2s alternate;
 }
+
 
 
 .direct-contact-container:hover {
@@ -70,7 +81,7 @@ body.fade-out {
 
 .contact-text { /* text for the contact stuff in the container */
   color: #555;
-  font-family: 'Kalam', sans-serif;
+  font-family: 'Gamja Flower', sans-serif;
   
 }
 .contact-text a { /*color fixing the links in the container */
@@ -115,7 +126,7 @@ body.fade-out {
 }
 
 
-/*service box things*/
+
 .flex-container {
   display: flex;
   justify-content: space-around; 
@@ -124,18 +135,25 @@ body.fade-out {
 }
 
 .services-container {
-  position: fixed; 
+  position: absolute; 
   left: 80px; 
   top: 200px;
-  max-width: 500px;
-  padding: 80px 150px;
+  width: 500px; 
+  height: 500px; 
+  padding: 40px; 
   background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 50%; 
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  opacity: 1; 
+  opacity: 1;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
   animation: fadeIn 4s forwards, colorChange 5s ease infinite 2s alternate;
 
 }
+
+
 
 .services-container:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -148,26 +166,32 @@ body.fade-out {
 
 .services-list li {
   padding: 10px 0;
-  font-family: 'Kalam', sans-serif;
+  font-family: 'Gamja Flower', sans-serif;
   color: #555;
 }
 
 h2 {
   position: absolute;
-  font-family: 'Kalam', sans-serif;
+  font-family: 'Gamja Flower', sans-serif;
   right: 250px; 
   top: 150px; 
   cursor: default;
   margin-left: 100px; 
+  color: white;
+  font-size: 36px;
+
 }
 
 h3 {
   position: absolute;
-  font-family: 'Kalam', sans-serif;
-  left: 130px; 
+  font-family: 'Gamja Flower', sans-serif;
+  left: 180px; 
   top: 150px; 
   cursor: default;
   margin-left: 100px; 
+  color: white;
+  font-size: 36px;
+  
 }
 
 @media (max-width: 768px) { 
@@ -189,28 +213,110 @@ h3 {
     height: 30px;
   }
 }
-/*toggle button stuff*/
+
 .container img {
-  width: 100px; 
-  height: auto; 
-  display: block; 
-  transition: transform 0.2s ease;
+    width: 100px; 
+    height: auto; 
+    display: block; 
+    transition: transform 0.2s ease;
 }
 .container img:hover {
-  animation: shake 0.5s ease infinite; 
+    animation: shake 0.5s ease infinite; 
 }
 
 
-@keyframes shake {
-  0%, 100% {
-    transform: scale(1.2) rotate(0);
+  @keyframes shake {
+    0%, 100% {
+      transform: scale(1.2) rotate(0);
+    }
+    25% {
+      transform: scale(1.2) rotate(-5deg);
+    }
+    75% {
+      transform: scale(1.2) rotate(5deg);
+    }
   }
-  25% {
-    transform: scale(1.2) rotate(-5deg);
-  }
-  75% {
-    transform: scale(1.2) rotate(5deg);
-  }
+  
+/* Header stuff */
+header {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: white;
+    position: relative;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    padding: 20px 150px 20px 20px;  
+    margin-top: 0;
+}
+
+header:hover {
+    transform: scale(1.10);
+    padding: 20px 150px 20px 20px; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    margin: 0;
+}
+
+nav ul li a, nav ul li a .icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px; 
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+nav ul li a:hover, nav ul li a:hover .icon {
+    animation: bounce 0.5s infinite;
+    color: #9c9fa1; 
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+}
+
+/* Footer stuff */
+footer {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: #f0f0f0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+    padding: 20px 150px 20px 20px;  
+}
+
+footer:hover {
+    transform: scale(1.10); 
+    padding: 20px 150px 20px 20px;  
+}
+
+footer p {
+    margin-left: 50px; 
 }
 /*animation for color wheel look for squares*/
 @keyframes colorChange {

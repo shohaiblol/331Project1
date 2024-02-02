@@ -12,7 +12,7 @@
     }
 }
 
-#loader { /*lpader function*/
+#loader { /*;pader function*/
     position: fixed;
     left: 0px;
     top: 0px;
@@ -42,45 +42,47 @@
     padding-top: 20px;
 }
 
-.project-card {
-    width: 400px;   
-    border: 1px solid #ccc;
-    border-radius: 5px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
-    background-color: #fff; 
-    box-sizing: border-box; 
+.project-card { /*project cards, made into ovals for the 2nd style*/
+    width: 400px;
+    border: 1px solid #ffffff;
+    border-radius: 100px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background-color: #222222;
+    box-sizing: border-box;
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: 30px; 
+    min-height: 30px;
     margin-bottom: 40px;
-    animation: hoverEffect 1.5s infinite;
-
-
     font-family: 'Signika Negative', sans-serif;
+    color: #ffffff;
+}
 
+.project-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-top-left-radius: 100px; 
+    border-top-right-radius: 100px; 
 }
 
 .project-card:hover { /* a hover effect for the cards*/
     transform: scale(1.05);
-    box-shadow: 0px 15px 30px -5px rgba(0, 0, 0, 0.3), 0px 5px 15px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 15px 30px -5px rgba(255, 255, 255, 0.3), 0px 5px 15px -2px rgba(184, 184, 184, 0.2);
+    animation: hoverEffect 1.5s infinite;
+
 }
 
 
 main {
-    padding: 460px 10px;
+    padding: 460px 10px; 
     box-sizing: border-box;
     max-width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.project-image {
-    width: 100%;
-    height: 100px; 
-    object-fit: cover;
-}
 
 .project-content {
     padding: 10px;  
@@ -115,35 +117,33 @@ main {
 .Code, .Demo { 
     padding: 5px 10px; 
     font-size: 13px; 
-    border-radius: 25%; 
+    border-radius: 60%; 
     font-weight: bold;
 }
 
 .Code { /*stuff for the code button */
-    background-color: #007bff;
-    color: white;
-    border-radius: 20%;
+    background-color: #ffffff;
+    color: 2c2c2c;
     font-weight: bold;
 }
 
 .Code:hover { /* small hover effect for the code button */
-    background-color: white;
-    color:#0056b3 ;
+    background-color: #0056b3;
+    color:#ffffff ;
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
 
 .Demo { /*stuff for the demo button */
-    background-color: #f64848;
-    color: white;
-    border-radius: 20%;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
     font-weight: bold;
     
 }
 
 .Demo:hover { /* small hover effect for the demo button */
-    background-color: white;
-    color: #ff5858;
+    background-color: #ff5858;
+    color: white;
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
@@ -164,10 +164,91 @@ main {
 
 body h3 {
     font-size: 15px; 
-    color: #333;
+    color: #ffffff;
     cursor: default;
 
 }
 
 
+/* Header stuff */
+header {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: white;
+    position: relative;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: top center;
+    padding: 20px 150px 20px 20px;  
+    margin-top: 0;
+}
+
+header:hover {
+    transform: scale(1.10);
+    padding: 20px 150px 20px 20px; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    margin: 0;
+}
+
+nav ul li a, nav ul li a .icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 18px; 
+    display: inline-block;
+    transition: all 0.3s ease; 
+}
+
+nav ul li a:hover, nav ul li a:hover .icon {
+    animation: bounce 0.5s infinite;
+    color: #9c9fa1; 
+}
+
+@keyframes bounce {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-5px);}
+    100% {transform: translateY(0);}
+}
+
+/* Footer stuff */
+footer {
+    font-family: 'Belanosima', sans-serif;
+    font-size: 10px; 
+    color: #f0f0f0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, #333, #1e1e1e);
+    transition: transform 0.3s ease;
+    transform-origin: bottom center;
+    padding: 20px 150px 20px 20px;  
+}
+
+footer:hover {
+    transform: scale(1.10); 
+    padding: 20px 150px 20px 20px;  
+}
+
+footer p {
+    margin-left: 50px; 
+}
 
